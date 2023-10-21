@@ -34,7 +34,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <body>
     <header>
       <details open>
-        <summary>Hit Test</summary>
+        <summary>My Web App</summary>
         <p>
           This sample demonstrates use of hit testing to place virtual objects on real-world surfaces.
           <a class="back" href="./">Back</a>
@@ -68,10 +68,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       scene.addNode(arObject);
 
       let title = new Gltf2Node({url: 'media/gltf/text/text.gltf'});
-      arObject.addNode(title);
+      arObject.addNode(title); 
 
       let flower = new Gltf2Node({url: 'media/gltf/viking_room/viking_room.gltf'});
-      arObject.addNode(flower);
+      arObject.addNode(flower); //this is the object that im adding
 
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle1.gltf'});
       reticle.visible = false;
@@ -83,7 +83,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       vec3.set(shadow.scale, 4.3, 3.9, 3.7);
       arObject.addNode(shadow);
 
-      const MAX_FLOWERS = 1;
+      const MAX_FLOWERS = 1; //bcs i want only one object 
       let flowers = [];
 
       // Ensure the background is transparent for AR.
@@ -93,7 +93,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         xrButton = new WebXRButton({
           onRequestSession: onRequestSession,
           onEndSession: onEndSession,
-          textEnterXRTitle: "START AR",
+          textEnterXRTitle: "START AR", 
           textXRNotFoundTitle: "AR NOT FOUND",
           textExitXRTitle: "EXIT  AR",
         });
