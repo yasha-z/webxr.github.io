@@ -34,7 +34,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <body>
     <header>
       <details open>
-        <summary>My Web App</summary>
+        <summary>Hit Test</summary>
         <p>
           This sample demonstrates use of hit testing to place virtual objects on real-world surfaces.
           <a class="back" href="./">Back</a>
@@ -68,10 +68,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       scene.addNode(arObject);
 
       let title = new Gltf2Node({url: 'media/gltf/text/text.gltf'});
-      arObject.addNode(title); 
+      arObject.addNode(title);
 
-      let flower = new Gltf2Node({url: 'media/gltf/sushi_restaurant/sushi_restaurant.gltf'});
-      arObject.addNode(flower); //this is the object that im adding
+      let flower = new Gltf2Node({url: 'media/gltf/viking_room/viking_room.gltf'});
+      arObject.addNode(flower);
 
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle1.gltf'});
       reticle.visible = false;
@@ -79,11 +79,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       // Having a really simple drop shadow underneath an object helps ground
       // it in the world without adding much complexity.
-      let shadow = new DropShadowNode();
-      vec3.set(shadow.scale, 4.3, 3.9, 3.7);
-      arObject.addNode(shadow);
+      //  I dont want want shadow for my model
+      // let shadow = new DropShadowNode();
+      // vec3.set(shadow.scale, 4.3, 3.9, 3.7);
+      // arObject.addNode(shadow);
 
-      const MAX_FLOWERS = 1; //bcs i want only one object 
+      const MAX_FLOWERS = 1;
       let flowers = [];
 
       // Ensure the background is transparent for AR.
@@ -93,7 +94,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         xrButton = new WebXRButton({
           onRequestSession: onRequestSession,
           onEndSession: onEndSession,
-          textEnterXRTitle: "START AR", 
+          textEnterXRTitle: "START AR",
           textXRNotFoundTitle: "AR NOT FOUND",
           textExitXRTitle: "EXIT  AR",
         });
