@@ -68,14 +68,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       scene.addNode(arObject);
 
       let title = new Gltf2Node({url: 'media/gltf/text/text.gltf'});
+      arObject.addNode(title);
 
-      // arObject.addNode(title);
-      let flower = new Gltf2Node({url: 'media/gltf/cave/cave.gltf'});
+      let flower = new Gltf2Node({url: 'media/gltf/home-theater/home-theater.gltf'});
       arObject.addNode(flower);
-
-
-      // let flower = new Gltf2Node({url: 'media/gltf/viking_room/viking_room.gltf'});
-      // arObject.addNode(flower);
 
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle1.gltf'});
       reticle.visible = false;
@@ -83,12 +79,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       // Having a really simple drop shadow underneath an object helps ground
       // it in the world without adding much complexity.
-      //  I dont want want shadow for my model
       let shadow = new DropShadowNode();
       vec3.set(shadow.scale, 4.3, 3.9, 3.7);
       arObject.addNode(shadow);
 
-      const MAX_FLOWERS = 2;
+      const MAX_FLOWERS = 1;
       let flowers = [];
 
       // Ensure the background is transparent for AR.
